@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Nari Saathi — Schemes &amp; Government Jobs for Women</title>
+<meta name="description" content="Government schemes (yojanas) and government job resources for women across India, in your own language." />
+<meta name="theme-color" content="#241F47" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icon.svg" />
+
+<!-- Fonts: display serif + multi-script body font so every supported
+     Indian language renders correctly without extra language packs -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+<nav class="tabs" id="tabs"></nav>
+
+<main id="main"></main>
+
+<footer>
+  <p id="footerNote"></p>
+</footer>
+
+<nav class="bottom-nav" id="bottomNav"></nav>
+<div class="modal-backdrop" id="modalBackdrop" style="display:none;"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  // footer note (kept outside app.js render loop since it never changes tabs)
+  document.addEventListener("DOMContentLoaded", () => {
+    const setFooter = () => { document.getElementById("footerNote").textContent = t("footerNote"); };
+    setFooter();
+    const observer = new MutationObserver(setFooter);
+    observer.observe(document.getElementById("topbar"), { childList: true, subtree: true });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Nari Saathi — Schemes & Jobs for Women",
+  "short_name": "Nari Saathi",
+  "description": "Government schemes and government job resources for women across India, in your own language.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FBF6EC",
+  "theme_color": "#241F47",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
